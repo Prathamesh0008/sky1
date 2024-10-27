@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lyotex</title>
+        <link rel="stylesheet" href="suppli.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-logo">
+                    <a href="/">
+                        <strong>Lyotex</strong>
+                    </a>
+                </div>
+                <ul class="navbar-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="/about">About</a></li>                    
+                    <li>
+                        <button title="cart" id="cartBtn" class="cart-link" style="background: chocolate;
+                        padding: 9px;
+                        border-radius: 20px;color: #fff; border: none;">
+                            <i class="fa fa-shopping-cart 2-xl">  </i><span id="totalCart"></span>
+                        </button>
+                    </li>
+                </ul>
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>  
+          
+        
+    <!-- <div class="container"> -->
+        <h1>Suppliments</h1>
+        <!-- <div class="products-grid"> -->
+                <style>
+                    /* Basic styles for the modal */
+                    .modal {
+                        display: none; 
+                        position: fixed; 
+                        z-index: 1; 
+                        left: 0;
+                        top: 0;
+                        width: 100%; 
+                        height: 100%; 
+                        overflow: auto; 
+                        background-color: rgb(0,0,0);
+                        background-color: rgba(0,0,0,0.4); 
+                        padding-top: 60px;
+                    }
+                    .modal-content {
+                        background-color: #fefefe;
+                        margin: 5% auto; 
+                        padding: 20px;
+                        border: 1px solid #888;
+                        width:280px; 
+                    }
+                    .close {
+                        color: #aaa;
+                        float: right;
+                        font-size: 28px;
+                        font-weight: bold;
+                    }
+                    .close:hover,
+                    .close:focus {
+                        color: black;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                </style>
+            </head>
+            
+            <body>
+                
+                
+                <div class="container">
+                
+                <div class="product-content" >                    
+                    <div id="product-container" style="display: flex;
+                    gap: 15px;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                "></div>
+                </div>
+                </div>
+            
+                <script>
+
+                const mobileMenu = document.getElementById('mobile-menu');
+                const navbarMenu = document.querySelector('.navbar-menu');
+
+                mobileMenu.addEventListener('click', () => {
+                    navbarMenu.classList.toggle('active');
+                });
+
+                
+                    const productList = [
+                        {
+                            title: "Zingavita Multivitamin (120 Tablets) ",
+                            descp: "POWER-PACKED NUTRITION WITH 100% RDA OF VITAMINS AND MINERALS",
+                            price: "$30.00",
+                            image: "img1.jpg",
+                        },
+                        {
+                            title: "Carbamide Forte Multivitamin for Men ",
+                            descp: "POWER-PACKED NUTRITION WITH 100% RDA OF VITAMINS AND MINERALS",
+                            price: "$30.00",
+                            image: "img2.jpg",
+                        },
+                        {
+                            title: "Centrum Women, World's No.1 Multivitamin  ",
+                            descp: "POWER-PACKED NUTRITION WITH 100% RDA OF VITAMINS AND MINERALS",
+                            price: "$30.00",
+                            image: "img3.jpg",
+                        },
+                        {
+                            title: "Revital H Multivitamin For Men (60 Capsules) ",
+                            descp: "POWER-PACKED NUTRITION WITH 100% RDA OF VITAMINS AND MINERALS",
+                            price: "$30.00",
+                            image: "img4.jpg",
+                        },
+                        {
+                            title: "Geofit Multivitamin Tablets For Men - 30 Tablets ",
+                            descp: "POWER-PACKED NUTRITION WITH 100% RDA OF VITAMINS AND MINERALS",
+                            price: "$30.00",
+                            image: "img5.jpg",
+                        }
+                    ]
+
+                    // window.onload = function() {
+                    //     const container = document.getElementById('product-container');
+                    //     for (let i = 0; i < productList.length; i++) {
+                    //         const product = productList[i];
+
+                    //         // Create a product div
+                    //         const productDiv = document.createElement('div');
+                    //         productDiv.className = 'product';
+
+                    //         // Add content to the product div
+                    //         productDiv.innerHTML = `
+                    //             <h3>${product.title}</h3>
+                    //             <img src="${product.image}" alt="${product.title}" style="width="">
+                    //             <p>${product.descp}</p>
+                    //             <p>Price: ${product.price}</p>
+                    //         `;
+
+                    //         // Append the product div to the container
+                    //         container.appendChild(productDiv);
+                    //     }
+                    // };
+
+                const cart = [];
+
+                window.onload = function() {
+                    const container = document.getElementById('product-container');
+                    for (let i = 0; i < productList.length; i++) {
+                        const product = productList[i];
+
+                        // Create a product div
+                        const productDiv = document.createElement('div');
+                        productDiv.className = 'product';
+
+                        // Add content to the product div
+                        productDiv.innerHTML = `
+                            <h3>${product.title}</h3>
+                            <img src="${product.image}" alt="${product.title}">
+                            <p>${product.descp}</p>
+                            <p>Price: <span class="price">${product.price}</span></p>
+                            <input type="number" min="1" value="1" class="quantity" />
+                            <button class="add-to-cart" data-title="${product.title}" data-price="${product.price}" data-img="${product.image}">Add to Cart</button>
+                        `;
+
+                        // Append the product div to the container
+                        container.appendChild(productDiv);
+                    }
+
+                    // Add event listeners for the "Add to Cart" buttons
+                    const buttons = document.querySelectorAll('.add-to-cart');
+                    buttons.forEach(button => {
+                        button.addEventListener('click', addToCart);
+                    });
+                };
+
+                function addToCart(event) {
+                    const button = event.target;
+                    const title = button.getAttribute('data-title');
+                    const price = button.getAttribute('data-price');
+                    const image = button.getAttribute('data-img');
+                    const quantityInput = button.previousElementSibling; // Get the quantity input
+                    const quantity = parseInt(quantityInput.value);
+
+                    const cartItem = {
+                        title: title,
+                        price: price,
+                        quantity: quantity,
+                        totalPrice: (parseFloat(price.slice(1)) * quantity).toFixed(2), // Remove $ and calculate total
+                        image: image
+                    };
+
+                    // Update the cart
+                    cart.push(cartItem);
+                    updateCartDisplay();
+                }
+
+                function updateCartDisplay() {                   
+                    $("#totalCart").html(cart.length)                    
+                }
+                
+                $('#cartBtn').click(function(){
+                    const cartString = JSON.stringify(cart);
+                    const encodedCart = encodeURIComponent(cartString);
+                    console.log(cart)
+                    window.location.href = `finish.html?cart=${encodedCart}`;
+                    // window.location = "/finish.html"
+
+                })
+                
+                </script>
+            </body>
+            </html>
+            

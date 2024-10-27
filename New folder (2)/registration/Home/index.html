@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyotex</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-logo">
+                    <a href="/">
+                        <strong>Lyotex</strong>
+                    </a>
+                </div>
+                <ul class="navbar-menu">
+                    <li><a href="/registration/Home/index.html">Home</a></li>
+                    <li><a href="/registration//Medication/medic.html">Products</a></li>
+                    <li><a href="/registration/about/index.html">About</a></li>                    
+                    <li>
+                        <button title="cart" id="cartBtn" class="cart-link" style="background: chocolate;
+                        padding: 9px;
+                        border-radius: 20px;color: #fff; border: none;">
+                            <i class="fa fa-shopping-cart 2-xl">  </i><span id="totalCart"></span>
+                        </button>
+                    </li>
+                </ul>
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav> 
+        <!-- <header class="header">
+        <div class="logo">
+            <h1><img src="lyotex.png" alt=""></h1>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+        </nav>
+
+
+        <div class="search-container">
+            <select title="categoryDropdown" id="categoryDropdown">
+                <option value="" selected disabled>Select Category</option>
+                <option value="vitamins">Vitamins</option>
+                <option value="supplements">Supplements</option>
+                <option value="medic">Medications</option>
+            </select>
+            <button title="search btn" onclick="openCategoryPage()" class="search-btn">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        
+
+
+        <div class="header-buttons">
+            <div class="login-container">
+                <a href="login.html" class="login-btn">Login</a>
+                <div class="dropdown">
+                    <a href="logout.html" class="logout-btn">Logout</a>
+                </div>
+            </div>
+            <a href="cart.html" class="cart-btn"><i class="fa fa-shopping-cart"></i></a>
+        </div>
+    </header> -->
+
+    
+    <div class="main-diplay">
+        <img id="slideshow-image" src="banner3.jpg" alt="">
+    </div>
+    <div class="scroll-container">
+        <div class="scroll-images">
+            <img src="/registration/public/mb1.webp" alt="image 1">
+            <img src="/registration/public/mb2.webp" alt="image 1">
+            <img src="/registration/public/mb3.jpg" alt="image 1">
+            <img src="/registration/public/mb4.webp" alt="image 1">
+            <img src="/registration/public/mb5.webp" alt="image 1">
+            <img src="/registration/public/mb1.webp" alt="image 1">
+            <img src="/registration/public/mb2.webp" alt="image 1">
+            <img src="/registration/public/mb3.webp" alt="image 1">
+            <img src="/registration/public/mb4.jpg alt="image 1">
+            <img src="mb5.jpg" alt="image 1">
+            <img src="mb1.webp" alt="image 1">
+            <img src="mb2.webp" alt="image 1">
+            <img src="mb3.jpg" alt="image 1">
+            <img src="mb4.jpg" alt="image 1">
+            <img src="mb5.jpg" alt="image 1">
+            <img src="mb2.webp" alt="image 1">
+            <img src="mb3.jpg" alt="image 1">
+            <img src="mb4.jpg" alt="image 1">
+            <img src="mb5.jpg" alt="image 1">
+            <img src="mb1.webp" alt="image 1">
+            <img src="mb2.webp" alt="image 1">
+            <img src="mb3.jpg" alt="image 1">
+            <img src="mb4.jpg" alt="image 1">
+            <img src="mb5.jpg" alt="image 1">
+        </div>
+    </div>
+    <div class="offer-tab">
+        <div class="offer">
+            <p>What We Offer?</p>
+            <p class="second-tab">"Empathy and knowledge are a doctor's greatest tools; with them, we not only heal the
+                body but also touch the soul."</p>
+        </div>
+        <div class="photo-icon">
+            <div class="img-one" id="vitamins-link">
+                <p class="tt">VITAMINS</p>
+                <img src="/registration/public/vitaminss.png" alt="Regular Plan" />
+            </div>
+            <div class="img-two" id="supplements-link">
+                <p class="tt">SUPPLEMENTS</p>
+                <img src="/registration/public/SUPPLE.png" alt="">
+                <!-- <button class="add-to-cart"type="button"  data-product-id="360 Plan">Add to Cart</button> -->
+            </div>
+            <div class="img-three" id="medic-link">
+                <p class="tt">MEDICATIONS</p>
+                <img src="/registration/public/medicationss.png" alt="">
+                <!-- <button class="add-to-cart" type="button" data-product="45 Plan">Add to Cart</button> -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="kyc-tab">
+        <div class="kyc-name">
+            <p>Start Shopping with us in 3 steps</p>
+        </div>
+        <div class="kyc-photo">
+            <a href="/registration//Registration/index.html" class="laptop static">
+                <img src="step-1.webp" alt="Register">
+                <p><b>REGISTER</b></p>
+                <p class="pbp">Register using your mobile number, Enter your name and email</p>
+            </a>
+             <a href="/registration/Login/index.html" class="mobile static">
+                <img src="step-2.webp" alt="Login">
+                <p><b>LOGIN</b></p>
+                <p class="pbp">Just One Click "Away"</p>
+            </a>
+            <a href="/registration/Suppliments/suppliments.html" class="tab static">
+                <img src="step-3.webp" alt="Start Ordering">
+                <p><b>Start Ordering</b></p>
+                <p class="pbp">Browse and order products for your business</p>
+            </a>
+        </div>
+    </div>
+    
+
+</body>
+<div class="footer">
+    <div class="text">
+        <h2>Shoppy</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing <br>
+            Dolore eum vero dolorem tempore magni! <br>
+            Inventore deleniti voluptas porro eligendi</p>
+    </div>
+    <div class="text">
+        <h2>Explore</h2>
+        <p>All</p>
+        <p>Rated</p>
+        <p>Scores</p>
+        <p>Scores</p>
+
+
+    </div>
+    <div class="text">
+        <h2>Connect</h2>
+        <p>Connect</p>
+        <p>Insta</p>
+        <p>Twitter</p>
+        <p>Facebook</p>
+
+    </div>
+    <div class="text">
+        <h2>Nity Grity</h2>
+        <p>Term & Condition</p>
+        <p>Privacy Policy </p>
+        <p>FAQs</p>
+        <p>Special credits</p>
+
+    </div>
+</div>
+
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const productsSelect = document.getElementById('products');
+
+        productsSelect.addEventListener('change', (event) => {
+            const selectedValue = event.target.value;
+
+            if (selectedValue === "vitamins") {
+                window.location.href = '/registration/Medication/index.html';
+            }
+            // You can add more conditions here for other options if needed
+        });
+
+        // Existing cart button logic
+        const cartButtons = document.querySelectorAll('.add-to-cart');
+        cartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productId = button.getAttribute('data-product-id');
+                const quantityInput = button.previousElementSibling;
+                const quantity = quantityInput.value || 1;
+                addToCart(productId, quantity);
+            });
+        });
+
+        function addToCart(productId, quantity) {
+            fetch('/cart/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    product_id: productId,
+                    quantity: quantity
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Product added to cart!');
+                    } else {
+                        alert('Failed to add product to cart.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error adding product to cart.');
+                });
+        }
+    });
+    // document.getElementById('about-item').addEventListener('click', function () {
+    //     window.location.href = '/about';
+    document.getElementById('vitamins-link').addEventListener('click', function () {
+        window.location.href = '/registration/Vitamins/index.html';
+    });
+    document.getElementById('medic-link').addEventListener('click', function () {
+        window.location.href = '/registration/suppliments/index.html';
+    });
+    document.getElementById('supplements-link').addEventListener('click', function () {
+        window.location.href = '/registration/suppliments/index.html';
+    });
+    const images = [
+        'banner2.jpg',
+        'banner3.jpg',
+        'banner4.jpg',
+        'banner5.jpg',
+        'banner6.jpg',
+
+    ];
+
+    let currentIndex = 0; // Track the current image index
+
+    function changeImage() {
+        currentIndex++; // Move to the next image
+        if (currentIndex >= images.length) {
+            currentIndex = 0; // Reset to the first image
+        }
+        document.getElementById('slideshow-image').src = images[currentIndex]; // Change the image source
+    }
+
+    // Change image every 3 seconds (3000 milliseconds)
+    setInterval(changeImage, 3000);
+    function filterDropdown() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const dropdown = document.getElementById('categoryDropdown');
+    const options = dropdown.getElementsByTagName('option');
+
+    for (let i = 1; i < options.length; i++) {
+        const optionText = options[i].textContent.toLowerCase();
+        options[i].style.display = optionText.includes(input) ? 'block' : 'none';
+    }
+}
+
+function openCategoryPage() {
+        const dropdown = document.getElementById('categoryDropdown');
+        const selectedValue = dropdown.value;
+
+        if (selectedValue) {
+            window.location.href = selectedValue + '.html'; // Redirect to the selected category page
+        } else {
+            alert('Please select a category.');
+        }
+    }
+
+
+</script>
+
+<script src="cart.js"></script>
+<script src="server.js"></script>
+
+
+
+
+</html>

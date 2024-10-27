@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lyotex</title>
+        <link rel="stylesheet" href="cartt.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    
+    <body>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-logo">
+                    <a href="/">
+                        <strong>Lyotex</strong>
+                    </a>
+                </div>
+                <ul class="navbar-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>                    
+                    <li>
+                        <button title="cart" id="cartBtn" class="cart-link" style="background: chocolate;
+                        padding: 9px;
+                        border-radius: 20px;color: #fff; border: none;">
+                            <i class="fa fa-shopping-cart 2-xl">  </i><span id="totalCart"></span>
+                        </button>
+                    </li>
+                </ul>
+                <div class="navbar-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>    
+        <div style="display: flex; width: 100%; height: 100%; justify-content: center; place-items: center;height: 100vh;">
+            <div class="cart-box" style="    background: #fff;
+            border: 1px solid #e1e1e1;
+            padding: 19px;
+            border-radius: 22px;
+            filter: drop-shadow(2px 7px 6px #e1e1e1);">
+                <h1 style="padding-bottom: 1rem;">Your Cart</h1>
+                <div id="cart-container"></div>
+                <hr/>
+                <div class="totals" id="totals" style="padding-top: 1rem; padding-bottom: 1rem;"></div>
+                <div class="" style="display: block; text-align: center;">
+                    <button type="button" style="width: 100%;
+                    background: orange;
+                    padding: 9px;
+                    font-size: larger;
+                    color: #fff;
+                    border: none;
+                    margin-bottom: 1rem; cursor: pointer;">Checkout</button>
+                    <a href="index.html" type="button" style="width: 100%;
+                    background: #fff;
+                    padding: 9px;
+                    font-size: larger;
+                    color: #ef8a42d1;
+                    border: none;
+                    margin-bottom: 1rem; cursor: pointer; text-align: center; width: 100%; text-decoration: none;">Keep Shopping</a>
+                </div>
+            </div>
+            
+        </div>
+     
+        <script>
+        // Example of hardcoded cart items, replace this with fetched data from your server
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        window.onload = function() {
+            const cartString = getUrlParameter('cart');
+            console.log(cartString)
+            if (cartString) {
+                const cart = JSON.parse(decodeURIComponent(cartString));
+                let totalQuantity = 0;
+                let totalPrice = 0;
+
+                const cartContainer = document.getElementById('cart-container');
+                cart.forEach(item => {
+                    const cartItemDiv = document.createElement('div');
+                    cartItemDiv.className = 'cart-item';
+                    cartItemDiv.innerHTML = `
+                    <div style="display:flex; place-item:center;gap:10px; padding-bottom:10px">
+                        <img src="${item.image}" style="width:32px; height:32px"/>
+                        <div>
+                            <h3>${item.title}</h3>
+                            <div style="display:flex; gap:10px;">
+                                <p>Qty: ${item.quantity}</p>
+                                <p>Price: $${item.totalPrice}</p>                            
+                            </div>
+                        </div>
+                    </div>
+                        `;
+                    cartContainer.appendChild(cartItemDiv);
+
+                    // Update total quantity and price
+                    totalQuantity += item.quantity;
+                    totalPrice += parseFloat(item.totalPrice);
+                });
+
+                // Display total quantity and price
+                const totalsDiv = document.getElementById('totals');
+                totalsDiv.innerHTML = `
+                    <p>Total Qty: ${totalQuantity}</p>
+                    <p>Total Price: $${totalPrice.toFixed(2)}</p>
+                `;
+            } else {
+                document.getElementById('cart-container').innerText = 'Your cart is empty.';
+            }
+        };
+        </script>
+        <script src="server.js"></script>
+
+</html>

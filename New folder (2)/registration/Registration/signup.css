@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    padding: 20px;
+    font-family: Arial;
+    box-shadow: 5px  5px 7px 5px #8888;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('/registration/public/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+      position: relative;
+    right: 15px;
+}
+body h1{
+    color: red;
+top: 10%;
+/* position: absolute; */
+font-size: 42px;
+margin-left: -10%;
+font-weight: 700;
+}
+body h2{
+    color: white;
+    padding-left: 10%;
+}
+.container{
+padding-left: 32%;
+margin: 10px;
+height: 100vh;
+margin-top: 14vh;
+position: absolute;
+
+}
+
+.main h1{
+    font-size: 36px;
+    text-align: center;
+    font-family: Arial;
+
+}
+
+
+input{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 50%;
+    font-size: 20px;
+    padding: 1px 20px;
+    margin: 8px;
+    border: none;
+    border-bottom: 2px solid #764776;
+    
+
+}
+
+input[type=submit]{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 52%;
+    background-color: #f0e7f0;
+    border:none;
+    color: rgb(12, 12, 12);
+    font-weight: 600;
+    padding: 16px 32px;
+    margin: 2px 2px;
+    border-radius: 10px;
+
+}
+body p{
+    color: white;
+    /* backdrop-filter: blur(10px); */
+}
+body p a{
+    color: white;
+    font-weight: 600;
+    font-size: 2vh;
+    backdrop-filter: blur(10px);
+}

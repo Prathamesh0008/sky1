@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h3>Lyotex Lifesciences Pvt Ltd</h3>
+    <div class="wrapper">
+        <form action="/login" method="POST"> <!-- Make sure to define the correct action -->
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" name="email" placeholder="username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required>
+                <i class='bx bxs-lock'></i>
+            </div>
+            <div id="error-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; border:1px solid black; padding:20px; z-index:1000;">
+                <p>Invalid email or password.</p>
+                <button onclick="closeModal()">Close</button>
+            </div>
+            <div class="remember-forget">
+                <label><input type="checkbox">Remember me</label>
+                <a href="forgot-password.html">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div class="register-link">
+                <p>Don't have an Account? <a href="signup.html">Register here</a></p> <!-- Link to signup page -->
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    function closeModal() {
+        document.getElementById('error-modal').style.display = 'none';
+    }
+
+    // Check if there's an error message passed in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+
+    if (error) {
+        document.getElementById('error-modal').style.display = 'block';
+    }
+</script>
+</html>
